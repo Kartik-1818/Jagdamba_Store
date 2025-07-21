@@ -35,6 +35,11 @@ console.log("Loading productRoutes...");
 app.use("/api/products", require("./routes/productRoutes"));
 app.use("/api/categories" , require("./routes/categoryRoutes"))
 
+app.get("/", (req, res) => {
+  res.send("✅ Jagdamba Store Backend is running.");
+});
+
+
 const PORT = process.env.PORT || 5050;
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`)
