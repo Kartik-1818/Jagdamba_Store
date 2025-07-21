@@ -1,0 +1,92 @@
+# Node.js dependencies
+**/node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by testing tools like jest
+**/coverage/
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm/
+
+# dotenv environment variable files
+**/.env
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# React build artifacts
+/frontend/build/
+/frontend/dist/
+
+/backend/build/
+/backend/dist/
+
+# OS metadata
+ehthumbs.db
+Icon?
+
+# Typescript cache
+**/dist/
+**/*.tsbuildinfo
+
+# Parcel cache
+.cache/
+
+# Vite cache
+/frontend/node_modules/.vite/
+
+# SASS cache
+.sass-cache/
+
+# Coverage reports
+coverage/
+
+# Next.js
+.next/
+
+# Firebase
+.firebase/
+
+# Mac System Files
+.DS_Store
+
+# Logs
+yarn-error.log
+
+# Optional yarn files
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+# npm package lock
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
