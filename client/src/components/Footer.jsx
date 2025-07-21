@@ -29,7 +29,7 @@ export default function Footer({ darkMode }) {
     }
 
     try {
-      const res = await axios.post("http://localhost:5050/api/subscribe", {
+      const res = await axios.post("https://jagdamba-store.onrender.com/api/subscribe", {
         email,
       });
 

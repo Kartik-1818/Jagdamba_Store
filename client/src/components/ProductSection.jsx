@@ -17,7 +17,7 @@ export default function ProductSection({ darkMode }) {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:5050/api/products/category/Top Products");
+      const res = await axios.get("https://jagdamba-store.onrender.com/api/products/category/Top Products");
       console.log("✅ Top Products Response:", res.data);
       setProducts(res.data);
     } catch (error) {

@@ -15,7 +15,7 @@ const RegisterPage = () => {
     setLoading(true);
     try {
       await axios.post(
-        "http://localhost:5050/api/auth/register",
+        "https://jagdamba-store.onrender.com/api/auth/register",
         { username, password },
         {
           headers: {

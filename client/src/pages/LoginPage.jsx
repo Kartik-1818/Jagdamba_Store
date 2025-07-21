@@ -17,7 +17,7 @@ const LoginPage = () => {
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:5050/api/auth/login",
+        "https://jagdamba-store.onrender.com/api/auth/login",
         { username, password },
         {
           headers: {

@@ -34,10 +34,10 @@ export default function Navbar({
   const fetchCategories = async () => {
     try {
       // 1. Fetch categories from backend
-      const res = await axios.get("http://localhost:5050/api/categories");
+      const res = await axios.get("https://jagdamba-store.onrender.com/api/categories");
 
       // 2. Fetch ALL products to check if any product is assigned to "Others"
-      const productsRes = await axios.get("http://localhost:5050/api/products");
+      const productsRes = await axios.get("https://jagdamba-store.onrender.com/api/products");
 
       // 3. Check if ANY product has the category "Others"
       const hasOthers = productsRes.data.some((p) => p.category === "Others");

@@ -28,7 +28,7 @@ export default function AdminDashboard() {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:5050/api/auth/users");
+      const res = await axios.get("https://jagdamba-store.onrender.com/api/auth/users");
       setUsers(res.data);
     } catch (err) {
       console.error("Error fetching users", err);
@@ -37,7 +37,7 @@ export default function AdminDashboard() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:5050/api/products");
+      const res = await axios.get("https://jagdamba-store.onrender.com/api/products");
       setProducts(res.data);
     } catch (err) {
       console.error("Error fetching products", err);
@@ -48,7 +48,7 @@ export default function AdminDashboard() {
 
   const fetchsubscribers = async () => {
     try {
-      const res = await axios.get("http://localhost:5050/api/subscribe");
+      const res = await axios.get("https://jagdamba-store.onrender.com/api/subscribe");
       setSubscribers(res.data);
     } catch (error) {
       console.log(error);
@@ -57,7 +57,7 @@ export default function AdminDashboard() {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:5050/api/categories");
+      const res = await axios.get("https://jagdamba-store.onrender.com/api/categories");
       setCategories(res.data);
     } catch (err) {
       console.error("Error fetching categories", err);
@@ -89,7 +89,7 @@ export default function AdminDashboard() {
       if (editId) {
         // If editing, send PUT request
         await axios.put(
-          `http://localhost:5050/api/products/${editId}`,
+          `https://jagdamba-store.onrender.com/api/products/${editId}`,
           productData
         );
         toast.success("Product updated ✅");
@@ -97,7 +97,7 @@ export default function AdminDashboard() {
         // Else, create new product
         console.log("Submitting data", productData);
 
-        await axios.post("http://localhost:5050/api/products", productData);
+        await axios.post("https://jagdamba-store.onrender.com/api/products", productData);
         toast.success("Product added ✅");
       }
 
@@ -132,7 +132,7 @@ export default function AdminDashboard() {
     if (!window.confirm("Are you sure you want to delete this product?"))
       return;
     try {
-      await axios.delete(`http://localhost:5050/api/products/${id}`);
+      await axios.delete(`https://jagdamba-store.onrender.com/api/products/${id}`);
       fetchProducts();
       toast.success("Deleted Product");
     } catch (err) {
@@ -143,7 +143,7 @@ export default function AdminDashboard() {
   const handleAddCategory = async () => {
     if (!newCategory.trim()) return;
     try {
-      await axios.post("http://localhost:5050/api/categories", {
+      await axios.post("https://jagdamba-store.onrender.com/api/categories", {
         name: newCategory,
       });
       toast.success("Category Added ✅");
@@ -158,7 +158,7 @@ export default function AdminDashboard() {
     if (!window.confirm("Are you sure you want to delete the category ?"))
       return;
     try {
-      await axios.delete(`http://localhost:5050/api/categories/${categoryId}`);
+      await axios.delete(`https://jagdamba-store.onrender.com/api/categories/${categoryId}`);
       toast.success("Deleted Successfully");
       fetchCategories();
     } catch (error) {

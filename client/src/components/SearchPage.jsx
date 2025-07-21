@@ -21,8 +21,8 @@ export default function SearchPage({
       const normalizedCategory = category?.trim() || "All";
       const url =
         normalizedCategory === "All"
-          ? "http://localhost:5050/api/products"
-          : `http://localhost:5050/api/products?category=${encodeURIComponent(
+          ? "https://jagdamba-store.onrender.com/api/products"
+          : `https://jagdamba-store.onrender.com/api/products?category=${encodeURIComponent(
               normalizedCategory
             )}`;
 
