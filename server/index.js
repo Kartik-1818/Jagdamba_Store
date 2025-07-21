@@ -7,7 +7,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://jagdamba-store.vercel.app",
+    origin: ["https://jagdamba-store.vercel.app" , "http://localhost:5050" ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
@@ -38,7 +38,6 @@ app.use("/api/categories" , require("./routes/categoryRoutes"))
 app.get("/", (req, res) => {
   res.send("✅ Jagdamba Store Backend is running.");
 });
-
 
 const PORT = process.env.PORT || 5050;
 app.listen(PORT, () =>
