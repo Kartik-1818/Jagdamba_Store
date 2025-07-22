@@ -43,3 +43,28 @@ const PORT = process.env.PORT || 5050;
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`)
 ); 
+
+const { SitemapStream, streamToPromise } = require('sitemap');
+const { createGzip } = require('zlib');
+
+app.get('/sitemap.xml', async (req, res) => {
+  try {
+    res.header('Content-Type', 'application/xml');
+    res.header('Content-Encoding', 'gzip');
+
+    const sitemap = new SitemapStream({ hostname: 'https://jagdamba-store.vercel.app' });
+
+    sitemap.write({ url: '/', changefreq: 'daily', priority: 1 });
+    sitemap.write({ url: '/products', changefreq: 'daily', priority: 0.9 });
+    sitemap.write({ url: '/contact', changefreq: 'monthly' });
+
+    // add all product URLs here dynamically from DB if possible
+    sitemap.end();
+
+    const pipeline = sitemap.pipe(createGzip());
+    streamToPromise(pipeline).then((sm) => res.send(sm));
+  } catch (e) {
+    console.error(e);
+    res.status(500).end();
+  }
+});
