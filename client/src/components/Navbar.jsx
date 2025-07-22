@@ -224,19 +224,31 @@ export default function Navbar({
         </button>
       </div>
       {/* Search Bar for Mobile */}
-      <div className="flex items-center border rounded overflow-hidden mt-2">
+      <div
+        className={`flex items-center w-full mt-2 rounded-full shadow-md border transition-all duration-300 ${
+          darkMode ? "bg-gray-800 border-gray-700" : "bg-white border-gray-300"
+        }`}
+      >
         <input
           type="text"
           placeholder="Search products..."
-          className={`flex-grow p-2 text-sm focus:outline-none ${
-            darkMode ? "bg-gray-700 text-white" : "bg-white text-gray-800"
+          className={`flex-grow px-4 py-2 text-sm bg-transparent rounded-l-full focus:outline-none ${
+            darkMode
+              ? "text-white placeholder-gray-400"
+              : "text-gray-800 placeholder-gray-500"
           }`}
           onChange={(e) => onSearchChange(e.target.value)}
         />
-        <button className="p-2">
+        <button
+          className={`px-4 py-2 rounded-r-full hover:scale-105 transition-transform duration-200 ${
+            darkMode ? "text-white" : "text-gray-800"
+          }`}
+          title="Search"
+        >
           <FaSearch />
         </button>
       </div>
+
       {/* Mobile Menu */}
       {menuOpen && (
         <div
