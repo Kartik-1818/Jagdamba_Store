@@ -29,9 +29,12 @@ export default function Footer({ darkMode }) {
     }
 
     try {
-      const res = await axios.post("https://jagdamba-store.onrender.com/api/subscribe", {
-        email,
-      });
+      const res = await axios.post(
+        "https://jagdamba-store.onrender.com/api/subscribe",
+        {
+          email,
+        }
+      );
 
       if (res.status === 200) {
         toast.success("Subscribed successfully!");
@@ -45,7 +48,13 @@ export default function Footer({ darkMode }) {
   };
 
   return (
-    <footer className={`px-4 md:px-8 py-12 border-t ${darkMode ? 'bg-gray-900 text-gray-300 border-gray-700' : 'bg-neutral-100 text-gray-800 border-gray-200'}`}>
+    <footer
+      className={`px-4 md:px-8 py-12 border-t ${
+        darkMode
+          ? "bg-gray-900 text-gray-300 border-gray-700"
+          : "bg-neutral-100 text-gray-800 border-gray-200"
+      }`}
+    >
       <div className="max-w-7xl mx-auto flex flex-col space-y-16">
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 w-full">
@@ -79,10 +88,20 @@ export default function Footer({ darkMode }) {
           <div className="flex flex-col items-center space-y-5 text-center">
             <h3 className="text-lg font-bold">CONNECT WITH US</h3>
             <div className="flex justify-center space-x-4 text-xl">
-              <FaFacebookF className="hover:text-blue-500 cursor-pointer" />
-              <FaInstagram className="hover:text-pink-500 cursor-pointer" />
               <a
-                href="mailto:youremail@example.com"
+                href="https://www.facebook.com/pawanjhamb"
+                className="flex items-center gap-2 hover:text-blue-400"
+              >
+                <FaFacebookF className="hover:text-blue-500 cursor-pointer" />
+              </a>
+              <a
+                href="https://www.instagram.com/kartikj_1718?igsh=MWdycjV3dG9laWh6eQ=="
+                className="flex items-center gap-2 hover:text-blue-400"
+              >
+                <FaInstagram className="hover:text-pink-500 cursor-pointer" />
+              </a>
+              <a
+                href="kartikjhamb29@gmail.com"
                 className="flex items-center gap-2 hover:text-blue-400"
               >
                 <FaEnvelope />
@@ -107,8 +126,8 @@ export default function Footer({ darkMode }) {
                 placeholder="Enter your email"
                 className={`px-4 py-2 w-full sm:w-64 rounded-md border focus:outline-none focus:ring-2 ${
                   darkMode
-                    ? 'bg-gray-800 text-gray-200 border-gray-600 placeholder-gray-400 focus:ring-gray-400'
-                    : 'bg-white text-gray-800 border-gray-300 placeholder-gray-500 focus:ring-gray-400'
+                    ? "bg-gray-800 text-gray-200 border-gray-600 placeholder-gray-400 focus:ring-gray-400"
+                    : "bg-white text-gray-800 border-gray-300 placeholder-gray-500 focus:ring-gray-400"
                 }`}
               />
               <button
@@ -132,7 +151,8 @@ export default function Footer({ darkMode }) {
               <FaMapMarkerAlt className="text-red-500 mt-1" />
               <span>
                 Jagdamba Store, In Front of Diamond Hospital,
-                <br />Aerodrum Road , Alwar Rajasthan - 301001
+                <br />
+                Aerodrum Road , Alwar Rajasthan - 301001
               </span>
             </div>
             <div>
@@ -154,10 +174,8 @@ export default function Footer({ darkMode }) {
         <div className="w-full border-t pt-6 text-center text-sm">
           <p>
             © {new Date().getFullYear()}{" "}
-            <span className="font-semibold">
-              JAGDAMBA STORE
-            </span>{" "}
-            — All rights reserved.
+            <span className="font-semibold">JAGDAMBA STORE</span> — All rights
+            reserved.
           </p>
         </div>
       </div>

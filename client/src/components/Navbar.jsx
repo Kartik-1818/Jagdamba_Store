@@ -251,7 +251,20 @@ export default function Navbar({
                 ? "bg-gray-700 text-white border border-gray-600"
                 : "border border-gray-300"
             }`}
-            onChange={(e) => onCategoryChange(e.target.value)}
+            onChange={(e) => {
+              const selectedCategory = e.target.value;
+              onCategoryChange(selectedCategory);
+
+              if (selectedCategory === "All") {
+                navigate("/");
+              } else {
+                navigate(
+                  `/products/${selectedCategory
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")}`
+                );
+              }
+            }}
           >
             <option value="All">All</option>
             {categories.map((cat) => (
