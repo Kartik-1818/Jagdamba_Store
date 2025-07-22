@@ -51,7 +51,7 @@ export default function SearchPage({
 
   return (
     <div
-      className={`max-w-[1500px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-30 relative ${
+      className={`max-w-[1500px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8 pt-30 relative ${
         darkMode ? "bg-gray-900 text-white" : "bg-neutral-100 text-gray-900"
       }`}
     >
