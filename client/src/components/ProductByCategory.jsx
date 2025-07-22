@@ -146,7 +146,7 @@ const ProductsByCategory = ({ darkMode }) => {
 
               <h3 className="text-sm font-semibold mb-1">{item.name}</h3>
               <p className = {`${
-        darkMode ?  "text-gray-600" : "text-gray-800"}`}>
+        darkMode ?  "text-gray-400" : "text-gray-600"}`}>
                 {showMore[item._id]
                   ? item.description
                   : item.description.slice(0,70) + (item.description.length > 70 ? '...' : '')}
