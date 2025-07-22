@@ -1,4 +1,4 @@
-import image1 from "../assets/msinlogo.jpg"
+import image1 from "../assets/mainlogo.jpg"
 
 const HeroSection = ({ darkMode }) => {
   const handleShopNow = () => {
