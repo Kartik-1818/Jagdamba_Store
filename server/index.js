@@ -44,27 +44,12 @@ app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`)
 ); 
 
-const { SitemapStream, streamToPromise } = require('sitemap');
-const { createGzip } = require('zlib');
+const path = require("path");
 
-app.get('/sitemap.xml', async (req, res) => {
-  try {
-    res.header('Content-Type', 'application/xml');
-    res.header('Content-Encoding', 'gzip');
+// Serve static files
+app.use(express.static(path.join(__dirname, "client/dist"))); // or build
 
-    const sitemap = new SitemapStream({ hostname: 'https://jagdamba-store.vercel.app' });
-
-    sitemap.write({ url: '/', changefreq: 'daily', priority: 1 });
-    sitemap.write({ url: '/products', changefreq: 'daily', priority: 0.9 });
-    sitemap.write({ url: '/contact', changefreq: 'monthly' });
-
-    // add all product URLs here dynamically from DB if possible
-    sitemap.end();
-
-    const pipeline = sitemap.pipe(createGzip());
-    streamToPromise(pipeline).then((sm) => res.send(sm));
-  } catch (e) {
-    console.error(e);
-    res.status(500).end();
-  }
+// Handle all SPA routes
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/dist", "index.html"));
 });
