@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "Dark") {
+    if (savedTheme === "dark") {
       setDarkmode(true);
       document.documentElement.classList.add("dark");
     }
