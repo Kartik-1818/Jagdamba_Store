@@ -149,7 +149,7 @@ const ProductsByCategory = ({ darkMode }) => {
         darkMode ?  "text-white" : "text-gray-900"}`}>
                 {showMore[item._id]
                   ? item.description
-                  : item.description.slice(0, 80) + (item.description.length > 80 ? '...' : '')}
+                  : item.description.slice(0,100) + (item.description.length > 100 ? '...' : '')}
               </p>
               {item.description.length > 50 && (
                 <button
