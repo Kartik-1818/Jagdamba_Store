@@ -98,8 +98,8 @@ const HomePage = ({ onToggleDarkMode, darkMode }) => {
           />
 
           <main className="flex-grow">
-            <HeroBanner />
             <SearchPage SelectedCategory={selectedCategory} searchQuery={searchQuery} darkMode={darkMode}/>
+            <HeroBanner />
             <CategoriesPage darkMode={darkMode} />
             <ProductSec
               SelectedCategory={selectedCategory}
