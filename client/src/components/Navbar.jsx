@@ -225,7 +225,7 @@ export default function Navbar({
       </div>
       {/* Search Bar for Mobile */}
       <div
-        className={`flex items-center w-full mt-2 rounded-full shadow-md border transition-all duration-300 ${
+        className={`flex md:hidden items-center w-full mt-2 rounded-full shadow-md border transition-all duration-300 ${
           darkMode ? "bg-gray-800 border-gray-700" : "bg-white border-gray-300"
         }`}
       >
