@@ -34,10 +34,14 @@ export default function Navbar({
   const fetchCategories = async () => {
     try {
       // 1. Fetch categories from backend
-      const res = await axios.get("https://jagdamba-store.onrender.com/api/categories");
+      const res = await axios.get(
+        "https://jagdamba-store.onrender.com/api/categories"
+      );
 
       // 2. Fetch ALL products to check if any product is assigned to "Others"
-      const productsRes = await axios.get("https://jagdamba-store.onrender.com/api/products");
+      const productsRes = await axios.get(
+        "https://jagdamba-store.onrender.com/api/products"
+      );
 
       // 3. Check if ANY product has the category "Others"
       const hasOthers = productsRes.data.some((p) => p.category === "Others");
@@ -219,7 +223,20 @@ export default function Navbar({
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
-
+      {/* Search Bar for Mobile */}
+      <div className="flex items-center border rounded overflow-hidden mt-2">
+        <input
+          type="text"
+          placeholder="Search products..."
+          className={`flex-grow p-2 text-sm focus:outline-none ${
+            darkMode ? "bg-gray-700 text-white" : "bg-white text-gray-800"
+          }`}
+          onChange={(e) => onSearchChange(e.target.value)}
+        />
+        <button className="p-2">
+          <FaSearch />
+        </button>
+      </div>
       {/* Mobile Menu */}
       {menuOpen && (
         <div
@@ -227,21 +244,6 @@ export default function Navbar({
             darkMode ? "text-gray-300" : "text-gray-700"
           }`}
         >
-          {/* Search Bar for Mobile */}
-          <div className="flex items-center border rounded overflow-hidden mt-2">
-            <input
-              type="text"
-              placeholder="Search products..."
-              className={`flex-grow p-2 text-sm focus:outline-none ${
-                darkMode ? "bg-gray-700 text-white" : "bg-white text-gray-800"
-              }`}
-              onChange={(e) => onSearchChange(e.target.value)}
-            />
-            <button className="p-2">
-              <FaSearch />
-            </button>
-          </div>
-
           {/* Category Selector in Mobile */}
 
           <select
