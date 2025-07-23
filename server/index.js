@@ -48,8 +48,3 @@ const path = require("path");
 
 // Serve static files
 app.use(express.static(path.join(__dirname, "client/dist"))); // or build
-
-// Handle all SPA routes
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/dist", "index.html"));
-});
