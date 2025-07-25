@@ -99,7 +99,7 @@ export default function SearchPage({
                 <h3 className="text-sm font-semibold text-center">
                   {item.name}
                 </h3>
-                <p className="text-xs text-center line-clamp-2">
+                <p className="text-xs text-center">
                   {item.description}
                 </p>
                 <div className="text-center mt-2 text-red-600 font-bold">
