@@ -91,7 +91,7 @@ const LoginPage = () => {
                 </button>
               </div>
 
-              <div className="text-right text-sm">
+              {/* <div className="text-right text-sm">
                 <button
                   type="button"
                   className="text-blue-500 hover:underline"
@@ -99,7 +99,7 @@ const LoginPage = () => {
                 >
                   Forgot password?
                 </button>
-              </div>
+              </div> */}
 
               <button
                 type="submit"
